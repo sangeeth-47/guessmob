@@ -220,6 +220,17 @@ rotateMessage();
 // Rotate every 5 seconds
 setInterval(rotateMessage, 5000);
     
+//Android Logic
+
+function showAndroidPreview(base64Data) {
+    var preview = document.getElementById('preview');
+    var previewContainer = document.getElementById('previewContainer');
+    if (preview) {
+        preview.src = base64Data;
+        preview.style.display = 'block';
+        if (previewContainer) previewContainer.style.display = 'block';
+    }
+}
 
     //Background stars animation
 
