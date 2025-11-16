@@ -53,6 +53,24 @@ function initApp() {
   });
 }
 
+function showAndroidPreview(base64Data) {
+  const preview = document.getElementById('preview');
+  const previewContainer = document.getElementById('previewContainer');
+  const dropZone = document.getElementById('dropZone');
+  
+  if (preview && previewContainer) {
+    preview.src = base64Data;
+    preview.style.display = 'block';
+    previewContainer.style.display = 'flex'; // or 'block' depending on your CSS
+    if (dropZone) {
+      dropZone.style.display = 'none'; // Hide choose button when preview shown
+    }
+    console.log('Android image preview loaded');
+  } else {
+    console.error('Preview elements not found');
+  }
+}
+
 // ✅ move showPreview outside initApp so Android can call it
 function showPreview(base64Data) {
   console.log("Android preview called"); // ✅ debug line
