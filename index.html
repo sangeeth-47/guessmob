@@ -78,7 +78,6 @@
   font-size: 1rem;
   color: #ccc;
 }
-
     #mainContent {
       display: none;
     }
@@ -99,10 +98,11 @@
 
       <div class="qa-toggle" onclick="toggleQA()">❓</div>
       <div class="qa-box" id="qaBox">
-        <div class="qa-item"><strong>Q1:</strong> Why isn't the Age Guessing feature functioning? <br><strong>A:</strong> The model is still being trained.</div>
+        <div class="qa-item"><strong>Q1:</strong> Why isn’t the Age Guessing feature giving accurate results? <br><strong>A:</strong> The model is still being trained and fine-tuned, so results may vary.</div>
         <div class="qa-item"><strong>Q2:</strong> Why isn't the Age Guess Spinning forever?<br><strong>A:</strong> Free-tier services may sleep—refresh to re-activate.</div>
         <div class="qa-item"><strong>Q3:</strong> How does the AI guess age?<br><strong>A:</strong> Through a trained deep learning model analyzing facial features.</div>
-        <div class="qa-item"><strong>Q4:</strong> Is my image stored?<br><strong>A:</strong> Yes, the image is stored for processing. It’s needed by the API to generate prediction.</div>
+        <div class="qa-item"><strong>Q4:</strong> Is my image stored?<br><strong>A:</strong> Yes. Images are stored only as required for processing and prediction, secured using AES-256 encryption within a private, access-controlled system.</div>
+        <div class="qa-item"><strong>Q5:</strong> What is this project for?<br><strong>A:</strong> This project was developed as part of my university coursework to explore real-world applications of artificial intelligence and web technologies.</div>
       </div>
 
       <div class="upload-area">
@@ -127,7 +127,6 @@
       <div class="notice" id="devNotice"></div>
     </div>
   </div>
-
   <script>
   (async () => {
     const hfInfoURL = "https://sangeeth47-age-gender-predictor.hf.space/gradio_api/info";
