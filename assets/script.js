@@ -1,3 +1,6 @@
+  // API configuration
+const apiBaseUrl = 'https://api.sangeeth47.in/api';
+
 let fileInput, preview, previewContainer, result;
 
 function toggleQA() {
@@ -96,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sessionHash = Math.random().toString(36).substring(2);
 
 // Fetch visitor count and initial logId on page load
-fetch("https://sangeeth2314105883websitecounter.azurewebsites.net/api/VisitCounterFunction?")
+fetch("${apiBaseUrl}/VisitCounterFunction?")
   .then(res => res.ok ? res.json() : Promise.reject("API error"))
   .then(data => {
     document.getElementById("visitCount").innerText = data.totalVisits != null 
@@ -137,7 +140,7 @@ async function submitImage() {
     };
 
     // 1️⃣ Upload image
-    const uploadResp = await fetch("https://sangeeth2314105883websitecounter.azurewebsites.net/api/uploadimage?", {
+    const uploadResp = await fetch("${apiBaseUrl}/uploadimage?", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -173,7 +176,7 @@ async function submitImage() {
 
         // 3️⃣ Post result to DB in background (fire & forget)
         if (logId) {
-          fetch("https://sangeeth2314105883websitecounter.azurewebsites.net/api/VisitCounterFunction?", {
+          fetch("${apiBaseUrl}/VisitCounterFunction?", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ logId: logId, resultText: resultText })
