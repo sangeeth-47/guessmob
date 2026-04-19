@@ -365,7 +365,7 @@
 
     try {
       // Step 1: Load assets
-      const res = await fetch("http://localhost:7071/api/getAssets");
+      const res = await fetch("https://api.sangeeth47.in/api/getAssets");
       const { cssUrl, jsUrl } = await res.json();
 
       const cssLink = document.createElement("link");
